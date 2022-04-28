@@ -11,7 +11,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { Box } from "@material-ui/core";
 import { Input } from "@mui/material";
-import InputAdornment from "@mui/material/InputAdornment";
+// import InputAdornment from "@mui/material/InputAdornment";
 const useStyles = makeStyles((theme) => ({
   button: {
     marginRight: theme.spacing(1),
@@ -44,6 +44,7 @@ function getStepContent(step) {
               src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
               id="output"
               width="150"
+              alt="profile-photo"
             />
             <label className="-label" for="file">
               <span className="glyphicon glyphicon-camera"></span>
@@ -1916,12 +1917,12 @@ const LinearStepper = () => {
     setActiveStep(activeStep - 1);
   };
 
-  const handleSkip = () => {
-    if (!isStepSkipped(activeStep)) {
-      setSkippedSteps([...skippedSteps, activeStep]);
-    }
-    setActiveStep(activeStep + 1);
-  };
+  // const handleSkip = () => {
+  //   if (!isStepSkipped(activeStep)) {
+  //     setSkippedSteps([...skippedSteps, activeStep]);
+  //   }
+  //   setActiveStep(activeStep + 1);
+  // };
 
   return (
     <Typography>

@@ -7,9 +7,9 @@ import {
   makeStyles,
   useTheme,
   useMediaQuery,
-  Box,
+  // Box,
 } from "@material-ui/core";
-import { currUser } from "../firebase";
+// import { currUser } from "../firebase";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
 
