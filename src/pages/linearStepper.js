@@ -9,7 +9,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Box } from "@material-ui/core";
 import { Input } from "@mui/material";
+import InputAdornment from "@mui/material/InputAdornment";
 const useStyles = makeStyles((theme) => ({
   button: {
     marginRight: theme.spacing(1),
@@ -31,6 +33,23 @@ function getStepContent(step) {
     case 0:
       return (
         <>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <span>Change Image</span>
+            <img
+              src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
+              id="output"
+              width="150"
+            />
+            <label className="-label" for="file">
+              <span className="glyphicon glyphicon-camera"></span>
+            </label>
+            <input id="file" type="file" onchange="loadFile(event)" />
+          </Box>
           <TextField
             id="outlined-basic"
             variant="outlined"
@@ -1947,7 +1966,7 @@ const LinearStepper = () => {
             >
               back
             </Button>
-            {isStepOptional(activeStep) && (
+            {/* {isStepOptional(activeStep) && (
               <Button
                 className={classes.button}
                 variant="contained"
@@ -1956,14 +1975,14 @@ const LinearStepper = () => {
               >
                 skip
               </Button>
-            )}
+            )} */}
             <Button
               className={classes.button}
               variant="contained"
               color="primary"
               onClick={handleNext}
             >
-              {activeStep === steps.length - 1 ? "Finish" : "Next"}
+              {activeStep === steps.length - 1 ? "Finish" : "Submit & Proceed"}
             </Button>
           </>
         )}

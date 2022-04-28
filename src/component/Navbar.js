@@ -7,7 +7,9 @@ import {
   makeStyles,
   useTheme,
   useMediaQuery,
+  Box,
 } from "@material-ui/core";
+import { currUser } from "../firebase";
 import { Link } from "react-router-dom";
 import DrawerComponent from "./Drawer";
 
@@ -36,14 +38,12 @@ function Navbar() {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
   return (
     <AppBar position="static">
       <CssBaseline />
       <Toolbar>
         <Typography variant="h4" className={classes.logo}>
           Sathyabama Institute of Science and Technology
-          
         </Typography>
         {isMobile ? (
           <DrawerComponent />
@@ -55,12 +55,13 @@ function Navbar() {
             <Link to="/about" className={classes.link}>
               About
             </Link>
-            <Link to="/profile" className={classes.link}>
+            {/* <Link to="/profile" className={classes.link}>
               Profile
-            </Link>
+            </Link> */}
             <Link to="/index" className={classes.link}>
               Login
             </Link>
+            {/* <Box></Box> */}
           </div>
         )}
       </Toolbar>
