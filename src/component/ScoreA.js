@@ -50,7 +50,9 @@ const ScoreA = () => {
                   id=""
                 />
               </TableCell>
-              <TableCell align="center">{20 * ematscore}</TableCell>
+              <TableCell align="center">
+                {ematscore > 20 ? "Exceeded value" : 20 * ematscore}
+              </TableCell>
               <TableCell align="center">
                 <Input type="file" name="" id="" />
               </TableCell>
