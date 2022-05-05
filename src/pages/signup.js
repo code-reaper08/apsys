@@ -29,7 +29,7 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const history = useHistory();
-  const [curUser, setCurUSer] = useState("");
+  // const [curUser, setCurUSer] = useState("");
   //   register function
   //   email = email + "@sathybama.ac.in";
   //   console.log(email);
@@ -41,9 +41,10 @@ const Signup = () => {
         .then((auth) => {
           console.log(auth);
           if (auth) {
-            setCurUSer(auth.user.delegate.email);
+            // setCurUSer(auth.user.delegate.email);
             console.log(auth.user);
-            console.log(`email: ${curUser}`);
+            alert("ACCOUNT CREATED SUCCESSFULLY");
+            // console.log(`email: ${curUser}`);
             history.push("/");
           }
         })
